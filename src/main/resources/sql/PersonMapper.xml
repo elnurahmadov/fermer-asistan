@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="agrotech.fermerasistan.mapper.PersonMapper">
+
+    <insert id="insertPerson" parameterType="agrotech.fermerasistan.model.Person">
+        INSERT INTO persons (fin, name, surname, phone, email, address, birth_date, gender, created_at, updated_at)
+        VALUES (#{fin}, #{name}, #{surname}, #{phone}, #{email}, #{address}, #{birthDate}, #{gender},
+                CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    </insert>
+
+</mapper>

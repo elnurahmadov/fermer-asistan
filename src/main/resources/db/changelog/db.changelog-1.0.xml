@@ -40,7 +40,7 @@
             <column name="id" type="UUID" defaultValue="uuid_generate_v4()">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="person_id" type="INTEGER">
+            <column name="person_id" type="UUID">
                 <constraints nullable="false"/>
             </column>
             <column name="registration_date" type="DATE"/>
@@ -63,7 +63,7 @@
             <column name="id" type="UUID" defaultValue="uuid_generate_v4()">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="farmer_id" type="INTEGER">
+            <column name="farmer_id" type="UUID">
                 <constraints nullable="false"/>
             </column>
             <column name="name" type="VARCHAR(255)">
