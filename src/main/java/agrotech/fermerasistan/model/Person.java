@@ -1,5 +1,6 @@
 package agrotech.fermerasistan.model;
 
+import agrotech.fermerasistan.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,7 @@ public class Person {
     private String email;
     private String address;
     private LocalDate birthDate;
-    private String gender;
+    private Gender gender;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

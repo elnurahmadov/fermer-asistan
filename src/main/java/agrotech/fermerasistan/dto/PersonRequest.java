@@ -1,5 +1,6 @@
 package agrotech.fermerasistan.dto;
 
+import agrotech.fermerasistan.enums.Gender;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -33,5 +34,5 @@ public class PersonRequest {
 
     private LocalDate birthDate;
 
-    private String gender;
+    private Gender gender;
 }
