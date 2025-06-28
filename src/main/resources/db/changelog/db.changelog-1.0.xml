@@ -84,4 +84,15 @@
                 constraintName="fk_farm_farmer"
                 onDelete="CASCADE"/>
     </changeSet>
+
+    <changeSet id="20250627-01-add-indexes-persons" author="elnur.ahmadov">
+        <createIndex indexName="idx_persons_fin" tableName="persons">
+            <column name="fin"/>
+        </createIndex>
+
+        <createIndex indexName="idx_persons_phone" tableName="persons">
+            <column name="phone"/>
+        </createIndex>
+    </changeSet>
+
 </databaseChangeLog>

@@ -7,8 +7,29 @@
 
     <insert id="insertPerson" parameterType="agrotech.fermerasistan.model.Person">
         INSERT INTO persons (fin, name, surname, phone, email, address, birth_date, gender, created_at, updated_at)
-        VALUES (#{fin}, #{name}, #{surname}, #{phone}, #{email}, #{address}, #{birthDate}, #{gender},
+        VALUES (#{fin}, #{name}, #{surname}, #{phone}, #{email}, #{address}, #{birthDate},
+                #{gender, typeHandler=agrotech.fermerasistan.handler.GenderTypeHandler},
                 CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
     </insert>
+    <select id="getPersonByFin" resultMap="PersonByFin" resultType="agrotech.fermerasistan.model.Person">
+        select *
+        from persons
+        where fin = #{fin}
+    </select>
+
+    <resultMap id="PersonByFin" type="agrotech.fermerasistan.model.Person">
+        <result property="id" column="id" javaType="java.util.UUID"
+                typeHandler="agrotech.fermerasistan.handler.UUIDTypeHandler"/>
+        <result property="fin" column="fin"/>
+        <result property="name" column="name"/>
+        <result property="surname" column="surname"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="address" column="address"/>
+        <result property="birthDate" column="birth_date"/>
+        <result property="gender" column="gender"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
 
 </mapper>
